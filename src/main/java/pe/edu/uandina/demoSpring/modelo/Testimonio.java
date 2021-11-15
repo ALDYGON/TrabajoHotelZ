@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "Testimonio")
-public class Tesimonio {
+public class Testimonio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -17,10 +17,10 @@ public class Tesimonio {
     @OneToMany(mappedBy = "tieneTestimonio")
     private List<Cliente> clientes;
 
-    public Tesimonio() {
+    public Testimonio() {
     }
 
-    public Tesimonio(long id, String contenido, Integer estado) {
+    public Testimonio(long id, String contenido, Integer estado) {
         this.id = id;
         this.contenido = contenido;
         this.estado = estado;

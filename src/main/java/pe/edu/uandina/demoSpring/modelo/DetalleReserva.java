@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "DetalleReserva")
-public class DetalleReserva<Testimonio> {
+public class DetalleReserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -27,12 +27,12 @@ public class DetalleReserva<Testimonio> {
     //referencia de muchos a uno para tieneRestaurante
     @ManyToOne
     @JoinColumn(name = "tieneRestaurante", referencedColumnName = "id")
-    private Testimonio tieneRestaurante;
+    private Restaurante tieneRestaurante;
 
     //referencia de muchos a uno para tieneHabitacion
     @ManyToOne
     @JoinColumn(name = "tieneHabitacion", referencedColumnName = "id")
-    private Testimonio tieneHabitacion;
+    private Habitacion tieneHabitacion;
 
     public DetalleReserva() {
     }

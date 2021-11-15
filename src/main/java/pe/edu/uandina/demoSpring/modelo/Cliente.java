@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Cliente")
-public class Cliente<Testimonio> {
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -29,7 +29,7 @@ public class Cliente<Testimonio> {
     //referencia de muchos a uno para tieneDetalleReserva
     @ManyToOne
     @JoinColumn(name = "tieneDetalleReserva", referencedColumnName = "id")
-    private Testimonio tieneDetalleReserva;
+    private DetalleReserva tieneDetalleReserva;
 
     public Cliente() {
     }
